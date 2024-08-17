@@ -1,3 +1,122 @@
+# Api endpoints
+
+- **Creat new course**
+  ```
+  Post http://localhost:1337/api/courses
+  ```
+  Create new course by instructor
+
+  Request :
+  ```
+  {
+  {
+  "data": {
+    "title": "Introduction to Node.js",
+    "description": "A beginner-friendly course on Node.js fundamentals.",
+    "users_permissions_user": 1
+  }
+  }
+  }
+  ```
+  Response : 
+ ```
+{
+{
+  "data": {
+    "id": 2,
+    "attributes": {
+      "createdAt": "2024-08-17T12:00:18.013Z",
+      "updatedAt": "2024-08-17T12:00:18.013Z",
+      "publishedAt": "2024-08-17T12:00:18.003Z",
+      "title": "Introduction to Node.js",
+      "description": "A beginner-friendly course on Node.js fundamentals."
+    }
+  },
+  "meta": {}
+}
+}
+ ```
+
+- **Get All Courses**
+  ```
+  Get http://localhost:1337/api/courses
+  ```
+  Retrieve All Courses
+
+  Response :
+  ```
+  {
+   {
+  "data": [
+    {
+      "id": 1,
+      "attributes": {
+        "createdAt": "2024-08-17T11:51:34.532Z",
+        "updatedAt": "2024-08-17T11:54:06.939Z",
+        "publishedAt": "2024-08-17T11:54:06.925Z",
+        "title": "first course in js",
+        "description": "learn data type"
+      }
+    },
+    {
+      "id": 2,
+      "attributes": {
+        "createdAt": "2024-08-17T12:00:18.013Z",
+        "updatedAt": "2024-08-17T12:00:18.013Z",
+        "publishedAt": "2024-08-17T12:00:18.003Z",
+        "title": "Introduction to Node.js",
+        "description": "A beginner-friendly course on Node.js fundamentals."
+      }
+    }
+  ],
+  "meta": {
+    "pagination": {
+      "page": 1,
+      "pageSize": 25,
+      "pageCount": 1,
+      "total": 2
+    }
+  }
+  }
+  }
+  ```
+  
+  - **Get Single Course**
+  ```
+  Get http://localhost:1337/api/courses/2
+  ```
+  Get single course by id
+
+  Request :
+  ```
+  {
+  {
+  "data": {
+    "id": 2,
+    "attributes": {
+      "createdAt": "2024-08-17T12:00:18.013Z",
+      "updatedAt": "2024-08-17T12:00:18.013Z",
+      "publishedAt": "2024-08-17T12:00:18.003Z",
+      "title": "Introduction to Node.js",
+      "description": "A beginner-friendly course on Node.js fundamentals."
+    }
+  },
+  "meta": {}
+  }
+  }
+  ```
+
+
+
+
+
+
+
+
+
+
+
+
 # 🚀 Getting started with Strapi
 
 Strapi comes with a full featured [Command Line Interface](https://docs.strapi.io/dev-docs/cli) (CLI) which lets you scaffold and manage your project in seconds.
