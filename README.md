@@ -80,14 +80,64 @@
   }
   }
   ```
-  
+
+    - **Get Course contain category**
+  ```
+  Get http://localhost:1337/api/courses/getAllCourses
+  ```
+  Get courses contain category
+
+  Response :
+  ```
+  {
+  [
+  {
+    "id": 1,
+    "createdAt": "2024-08-17T11:51:34.532Z",
+    "updatedAt": "2024-08-17T11:54:06.939Z",
+    "publishedAt": "2024-08-17T11:54:06.925Z",
+    "title": "first course in js",
+    "description": "learn data type",
+    "category": null
+  },
+  {
+    "id": 2,
+    "createdAt": "2024-08-17T12:00:18.013Z",
+    "updatedAt": "2024-08-17T12:00:18.013Z",
+    "publishedAt": "2024-08-17T12:00:18.003Z",
+    "title": "Introduction to Node.js",
+    "description": "A beginner-friendly course on Node.js fundamentals.",
+    "category": null
+  },
+  {
+    "id": 3,
+    "createdAt": "2024-08-17T13:40:37.932Z",
+    "updatedAt": "2024-08-17T13:40:37.932Z",
+    "publishedAt": "2024-08-17T13:40:37.912Z",
+    "title": "Express server",
+    "description": "lets build express server",
+    "category": {
+      "id": 2,
+      "name": "Backend nodejs",
+      "description": "let's enroll courses backend",
+      "createdAt": "2024-08-17T13:39:42.046Z",
+      "updatedAt": "2024-08-17T13:39:42.046Z",
+      "publishedAt": "2024-08-17T13:39:42.036Z"
+    }
+  }
+  ]
+  }
+  ```
+
+
+
   - **Get Single Course**
   ```
   Get http://localhost:1337/api/courses/2
   ```
   Get single course by id
 
-  Request :
+  Response :
   ```
   {
   {
@@ -105,6 +155,40 @@
   }
   }
   ```
+
+    - **Get enrollment course**
+  ```
+  Get http://localhost:1337/api/enrollments/getEnrollmentCourse
+  ```
+  Get get enrollment course
+
+  Response :
+  ```
+  {
+  [
+  {
+    "id": 1,
+    "date": "2024-08-18T07:42:26.000Z",
+    "createdAt": "2024-08-18T07:42:40.242Z",
+    "updatedAt": "2024-08-18T07:42:40.242Z",
+    "publishedAt": "2024-08-18T07:42:40.231Z",
+    "course": {
+      "id": 3,
+      "createdAt": "2024-08-17T13:40:37.932Z",
+      "updatedAt": "2024-08-17T13:40:37.932Z",
+      "publishedAt": "2024-08-17T13:40:37.912Z",
+      "title": "Express server",
+      "description": "lets build express server"
+    },
+    "users_permissions_user": {
+      "id": 1,
+      "username": "mohamed",
+      "email": "engmogamil@gmail.com",
+    }
+  }
+  ```
+
+  
 
 
 
